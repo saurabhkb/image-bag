@@ -18,14 +18,10 @@ For more information, refer to Professor Andrew Ng's Stanford [presentation](htt
 
 The meta folder must be updated:
 
-1. meta/Train -> contains images used for training
-
-2. meta/Test -> contains images used for testing
-
-3. meta/labels.txt -> contains the labels of the training images
-
-4. siftDemoV4.zip contains the code for SIFT. It must be compiled and the 
-executable moved to the parent folder and named as 'sift'
+1. ``meta/Train`` -> contains images used for training
+2. ``meta/Test`` -> contains images used for testing
+3. ``meta/labels.txt`` -> contains the labels of the training images
+4. ``siftDemoV4.zip`` contains the code for SIFT. It must be compiled and the executable moved to the parent folder and named as ``sift``
 
 
 #### To run:
@@ -37,8 +33,9 @@ Linux Ubuntu
 
 
 #### Requirements:
-sklearn
-numpy
-scipy
-PIL
-pylab
+
+1. sklearn
+2. numpy
+3. scipy
+4. PIL
+5. pylab
