@@ -1,7 +1,7 @@
 Image-Bag
 =========
 
-Implements an image based bag of words classifier.
+Implements an image based bag of words classifier. Some of the code has been adapted from [shackenberg](https://github.com/shackenberg)'s [Minimal Bag of Visual Words Image Classifier](https://github.com/shackenberg/Minimal-Bag-of-Visual-Words-Image-Classifier).
 
 Key steps:
 
@@ -21,7 +21,7 @@ The meta folder must be updated:
 1. ``meta/Train`` -> contains images used for training
 2. ``meta/Test`` -> contains images used for testing
 3. ``meta/labels.txt`` -> contains the labels of the training images
-4. ``siftDemoV4.zip`` contains the code for SIFT. It must be compiled and the executable moved to the parent folder and named as ``sift``
+4. ``siftDemoV4.zip`` -> contains the code for SIFT. It must be compiled and the executable moved to the parent folder and named as ``sift``
 
 
 #### To run:
