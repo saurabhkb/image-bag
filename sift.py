@@ -1,7 +1,6 @@
 """ 
 ADAPTED FROM:
-
-Shackenberg's Python module for use with David Lowe's SIFT code available at:
+Python module for use with David Lowe's SIFT code available at:
 http://www.cs.ubc.ca/~lowe/keypoints/
 adapted from the matlab code examples.
 Jan Erik Solem, 2009-01-30
@@ -17,8 +16,11 @@ import cPickle
 import pylab
 from os.path import exists, basename
 
+''' set accordingly '''
 MAXSIZE = 1024
-SIFT_PATH = "<sift path>"
+
+''' sift feature points will be stored in files to prevent them from being recalculated '''
+SIFT_PATH = "meta/Sift/"
 
 class Sift:
 
@@ -27,19 +29,19 @@ class Sift:
 		except OSError: pass
 
 	def extract_sift(self, imagename):
+		''' extract SIFT feature points and store them in file '''
 		tempname = os.path.join(SIFT_PATH, "%s.sift" % basename(imagename))
 		if not exists(tempname):
+			import sys
+			sys.exit(1)
 			self.process_image(imagename, tempname)
-		else:
-			self.process_image(imagename, tempname)
+		else: print "FOUND!"
 		return self.read_features_from_file(tempname)[1]
 
 
 	def process_image(self, imagename, resultname='temp.sift'):
-		""" process an image and save the results in a .key ascii file"""
+		''' process an image and save the results in a .key ascii file '''
 		if imagename[-3:] != 'pgm':
-			#create a pgm file, image is resized, if it is too big.
-			# sift returns an error if more than 8000 features are found
 			size = (MAXSIZE, MAXSIZE)
 			im = Image.open(imagename).convert('L')
 			im.thumbnail(size, Image.ANTIALIAS)
